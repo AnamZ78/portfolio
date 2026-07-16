@@ -66,8 +66,8 @@ export default function About() {
 
         <BentoCard i={2} className="bento-edu">
           <p className="card-label">— education</p>
-          <h3>B.Tech, Computer Science</h3>
-          <p className="mini">AKTU · 2019 → 2023</p>
+          <h3>Master of Computer Applications</h3>
+          <p className="mini">Madan Mohan Malaviya University of Technology, Gorakhpur · Nov 2021 → Jul 2023</p>
         </BentoCard>
 
         <BentoCard i={3} className="bento-stack">
