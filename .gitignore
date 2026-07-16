@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+db.sqlite3
+.venv/
+.DS_Store
+frontend/node_modules/
+# frontend/dist is committed on purpose — Render's python runtime doesn't build node

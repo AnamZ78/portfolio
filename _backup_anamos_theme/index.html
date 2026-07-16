@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AnamOS — Anam Zahid · Python Full-Stack Developer</title>
+  <meta name="description" content="Anam Zahid — Python Full-Stack Developer with 3+ years of experience building fintech, HRMS, AI-evaluation and data platforms with Django, FastAPI, React & AWS." />
+  <meta property="og:title" content="AnamOS — the portfolio of Anam Zahid" />
+  <meta property="og:description" content="An interactive OS. Boot it up, open the apps, type in the terminal — and hire the developer behind it." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b0e14'/%3E%3Ctext x='50' y='66' font-size='44' font-family='monospace' font-weight='700' fill='%2334d399' text-anchor='middle'%3E%E2%96%B8_%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+  <!-- ============ BOOT SCREEN ============ -->
+  <div class="boot" id="boot">
+    <pre class="boot-log" id="bootLog"></pre>
+    <div class="boot-bar"><div class="boot-bar-fill" id="bootFill"></div></div>
+    <p class="boot-skip">click anywhere to skip</p>
+  </div>
+
+  <!-- ============ DESKTOP ============ -->
+  <div class="desktop" id="desktop">
+    <div class="wallpaper" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <div class="desk-hero" aria-hidden="true">
+      <p class="dh-time mono" id="deskClock">--:--</p>
+      <h1 class="dh-name">Anam Zahid</h1>
+      <p class="dh-role mono">python full-stack developer · 3+ yrs · fintech / hrms / ai-eval</p>
+      <p class="dh-hint mono">▸ pick a command — or open the Terminal (dock) and type <b>help</b></p>
+      <div class="dh-cmds mono">
+        <button class="dh-cmd" data-open="about"><span class="c-prompt">$</span> open about<span class="c-note"># whoami</span></button>
+        <button class="dh-cmd" data-open="experience"><span class="c-prompt">$</span> open experience<span class="c-note"># work history</span></button>
+        <button class="dh-cmd" data-open="projects"><span class="c-prompt">$</span> open projects<span class="c-note"># things I built</span></button>
+        <button class="dh-cmd" data-open="skills"><span class="c-prompt">$</span> open skills<span class="c-note"># tech stack</span></button>
+        <button class="dh-cmd" data-open="contact"><span class="c-prompt">$</span> open contact<span class="c-note"># say hello</span></button>
+        <a class="dh-cmd" href="/static/assets/Anam_Zahid_Resume.pdf" target="_blank" rel="noopener"><span class="c-prompt">$</span> open resume.pdf<span class="c-note"># download</span></a>
+      </div>
+    </div>
+
+    <!-- menu bar -->
+    <header class="menubar">
+      <div class="menubar-left">
+        <span class="menu-logo">▸_ AnamOS</span>
+        <span class="menu-item" data-open="about">About</span>
+        <span class="menu-item" data-open="projects">Projects</span>
+        <span class="menu-item" data-open="experience">Experience</span>
+        <span class="menu-item" data-open="contact">Contact</span>
+      </div>
+      <div class="menubar-right">
+        <a class="menu-item" href="https://github.com/AnamZ78" target="_blank" rel="noopener">GitHub</a>
+        <a class="menu-item" href="https://www.linkedin.com/in/anamzahid126/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="menu-status" title="All systems operational">● online</span>
+        <span class="menu-clock" id="menuClock">--:--</span>
+      </div>
+    </header>
+
+    <!-- desktop widgets -->
+    <aside class="widget monitor mono" aria-hidden="true">
+      <p class="wg-title">⚙ system monitor</p>
+      <div class="proc"><span>python3</span><span class="pbar"><i style="--p:97%;--d:0s"></i></span><b>97%</b></div>
+      <div class="proc"><span>django.service</span><span class="pbar"><i style="--p:88%;--d:.4s"></i></span><b>88%</b></div>
+      <div class="proc"><span>fastapi.worker</span><span class="pbar"><i style="--p:92%;--d:.8s"></i></span><b>92%</b></div>
+      <div class="proc"><span>react.render</span><span class="pbar"><i style="--p:78%;--d:1.2s"></i></span><b>78%</b></div>
+      <div class="proc"><span>coffee.daemon</span><span class="pbar"><i style="--p:100%;--d:1.6s"></i></span><b>100%</b></div>
+      <p class="wg-foot">uptime 3+ yrs · 0 crashes in prod</p>
+    </aside>
+
+    <aside class="widget note" aria-hidden="false">
+      <p class="wg-title">📌 todo.md</p>
+      <ul class="mono">
+        <li class="done">ship fintech backend</li>
+        <li class="done">build HRMS + ATS</li>
+        <li class="done">evaluate LLMs (ARC-AGI-3)</li>
+        <li class="next">your project here ←</li>
+      </ul>
+    </aside>
+
+    <!-- ============ WINDOWS ============ -->
+
+    <!-- Terminal -->
+    <section class="window win-terminal" id="win-terminal" style="--x:54%; --y:12%; --w:580px;">
+      <div class="win-bar">
+        <div class="win-lights"><button class="wl close" data-act="close" aria-label="close"></button><button class="wl min" data-act="min" aria-label="minimize"></button><button class="wl max" data-act="max" aria-label="maximize"></button></div>
+        <span class="win-title">terminal — zsh</span>
+      </div>
+      <div class="win-body term" id="termBody">
+        <div id="termOut"></div>
+        <div class="term-line">
+          <span class="term-prompt">visitor@anamos:~$</span>
+          <input id="termInput" class="term-input" type="text" autocomplete="off" spellcheck="false" aria-label="terminal input" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="window" id="win-about" style="--x:7%; --y:14%; --w:530px;">
+      <div class="win-bar">
+        <div class="win-lights"><button class="wl close" data-act="close" aria-label="close"></button><button class="wl min" data-act="min" aria-label="minimize"></button><button class="wl max" data-act="max" aria-label="maximize"></button></div>
+        <span class="win-title">About.txt — Anam Zahid</span>
+      </div>
+      <div class="win-body">
+        <div class="about-head">
+          <div class="avatar" id="avatarSlot">AZ</div>
+          <div>
+            <h1>Anam Zahid</h1>
+            <p class="dim">Python Full-Stack Developer · 3+ years · India</p>
+            <p class="dim mono small">MCA — Madan Mohan Malaviya University of Technology</p>
+          </div>
+        </div>
+        <p>I turn complex business problems into reliable, production-grade software. Four companies, four domains: large-scale <b>web scraping</b> (Walmart, Amazon…), a complete <b>fintech/NBFC lending backend</b>, a multi-tenant <b>HRMS &amp; payroll product</b>, and currently <b>AI/LLM model evaluation</b> — including work on the <b>ARC-AGI-3 benchmark</b>.</p>
+        <p>I care about clean APIs, query performance, and shipping end-to-end — schema to deployed, documented, monitored code.</p>
+        <div class="stat-row">
+          <div class="stat"><b>3+</b><span>years</span></div>
+          <div class="stat"><b>4</b><span>companies</span></div>
+          <div class="stat"><b>15+</b><span>projects</span></div>
+          <div class="stat"><b>2</b><span>awards</span></div>
+        </div>
+        <p class="mono small dim">🏆 Best Performer · 🌟 Rising Star — Jewar International Technologies</p>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="window" id="win-experience" style="--x:13%; --y:8%; --w:660px;">
+      <div class="win-bar">
+        <div class="win-lights"><button class="wl close" data-act="close" aria-label="close"></button><button class="wl min" data-act="min" aria-label="minimize"></button><button class="wl max" data-act="max" aria-label="maximize"></button></div>
+        <span class="win-title">Experience.log</span>
+      </div>
+      <div class="win-body log">
+        <article class="log-entry">
+          <header><span class="log-badge now">RUNNING</span><h2>Python Full-Stack Developer · Quess Corp (Client: Ethara AI)</h2><span class="log-date mono">Feb 2026 → now · Gurugram</span></header>
+          <ul>
+            <li>AI &amp; LLM model evaluation — personas, prompts, rubric-based datasets, output quality checks.</li>
+            <li>Contributed training games, trajectories and an evaluation harness to the <b>ARC-AGI-3 benchmark</b>.</li>
+            <li>Custom Odoo addons exposing REST APIs — KPI dashboards, budget tracking, role-scoped task views.</li>
+            <li>Lifecycle notifications with priority escalation; Docker &amp; Kubernetes workflows.</li>
+          </ul>
+        </article>
+        <article class="log-entry">
+          <header><span class="log-badge">EXITED 0</span><h2>Python Developer · Pranathi Software (BharatPayroll HRMS)</h2><span class="log-date mono">Aug 2025 → Feb 2026 · Remote</span></header>
+          <ul>
+            <li>End-to-end payroll: salary computation, referral bonuses, statutory forms (Form 16, 3A, 15G).</li>
+            <li>Designed the full offboarding module — approvals, NOC, exit interviews, Email + WhatsApp alerts.</li>
+            <li>Built a complete ATS: resume/JD parsing, assessments, referral flows, pipeline tracking, HRMS sync.</li>
+            <li>Scalable multi-tenant architecture with tenant-level configuration and reporting.</li>
+          </ul>
+        </article>
+        <article class="log-entry">
+          <header><span class="log-badge">EXITED 0</span><h2>Python/Django Developer · Jewar International Technologies</h2><span class="log-date mono">Feb 2025 → Aug 2025 · Noida</span></header>
+          <ul>
+            <li>Complete fintech/NBFC backend — KYC (Aadhaar, PAN, selfie, video), OTP/MPIN auth, multi-role dashboards.</li>
+            <li>Full loan lifecycle: NumPy/Pandas calculations, sanctioning, repayments, analytics; deployed on AWS.</li>
+            <li>Integrated video KYC, MSG91 SMS, WhatsApp, email, push; generated legal PDFs.</li>
+            <li>🏆 Best Performer &amp; Rising Star awards.</li>
+          </ul>
+        </article>
+        <article class="log-entry">
+          <header><span class="log-badge">EXITED 0</span><h2>Python Developer · Masthead Technologies</h2><span class="log-date mono">Aug 2023 → Jan 2025 · Noida</span></header>
+          <ul>
+            <li>Large-scale scraping systems for Walmart, Home Depot, Wayfair, Amazon, Lumens, Target.</li>
+            <li>Proxy rotation, CAPTCHA handling, dynamic waits, anti-bot bypass — reliable extraction at scale.</li>
+            <li>High-volume dataset processing with Pandas &amp; SQL for analytics pipelines.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="window" id="win-projects" style="--x:30%; --y:18%; --w:620px;">
+      <div class="win-bar">
+        <div class="win-lights"><button class="wl close" data-act="close" aria-label="close"></button><button class="wl min" data-act="min" aria-label="minimize"></button><button class="wl max" data-act="max" aria-label="maximize"></button></div>
+        <span class="win-title">Projects — 6 items</span>
+      </div>
+      <div class="win-body files">
+        <a class="file" href="https://github.com/AnamZ78/hrms-lite" target="_blank" rel="noopener">
+          <span class="file-icon">🗃️</span>
+          <span class="file-info"><b>hrms-lite</b><i>React · TypeScript · FastAPI · PostgreSQL</i>
+          <p>Full-stack HRMS — employees, attendance with status types &amp; date filters, real-time analytics dashboard.</p></span>
+          <span class="file-go">↗</span>
+        </a>
+        <div class="file">
+          <span class="file-icon">🏦</span>
+          <span class="file-info"><b>nbfc-lending-backend</b><i>Python · Django · DRF · PostgreSQL · AWS</i>
+          <p>Lending platform backend — full KYC, loan lifecycle to disbursement, e-sign, PDFs, multilingual, SMS/WhatsApp/push.</p></span>
+          <span class="file-go dim">private</span>
+        </div>
+        <div class="file">
+          <span class="file-icon">🕷️</span>
+          <span class="file-info"><b>scraper-fleet</b><i>Python · Selenium · BeautifulSoup · Pandas</i>
+          <p>Distributed e-commerce scrapers — proxy rotation, CAPTCHA bypass, fault-tolerant scheduling, clean data out.</p></span>
+          <span class="file-go dim">private</span>
+        </div>
+        <a class="file" href="https://github.com/AnamZ78/E-Comm-Website" target="_blank" rel="noopener">
+          <span class="file-icon">🛒</span>
+          <span class="file-info"><b>e-comm-website</b><i>Django · MySQL · JavaScript</i>
+          <p>Fully functional store — product browsing, cart management, seamless order placement.</p></span>
+          <span class="file-go">↗</span>
+        </a>
+        <a class="file" href="https://github.com/AnamZ78/Urlshortener" target="_blank" rel="noopener">
+          <span class="file-icon">🔗</span>
+          <span class="file-info"><b>url-shortener</b><i>Python · Django</i>
+          <p>Short links with per-link expiration — auto-deactivate after N hours.</p></span>
+          <span class="file-go">↗</span>
+        </a>
+        <a class="file" href="https://github.com/AnamZ78/taskmanager" target="_blank" rel="noopener">
+          <span class="file-icon">✅</span>
+          <span class="file-info"><b>taskmanager</b><i>Python · Django · SQLite</i>
+          <p>Task management app with clean CRUD workflows and ORM-driven queries.</p></span>
+          <span class="file-go">↗</span>
+        </a>
+        <a class="file more" href="https://github.com/AnamZ78?tab=repositories" target="_blank" rel="noopener">
+          <span class="file-icon">📂</span><span class="file-info"><b>see all repositories →</b></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="window" id="win-skills" style="--x:44%; --y:24%; --w:560px;">
+      <div class="win-bar">
+        <div class="win-lights"><button class="wl close" data-act="close" aria-label="close"></button><button class="wl min" data-act="min" aria-label="minimize"></button><button class="wl max" data-act="max" aria-label="maximize"></button></div>
+        <span class="win-title">Skills.sys — loaded modules</span>
+      </div>
+      <div class="win-body mono skills">
+        <div class="skill-mod"><span class="sk-name">python.core</span><span class="sk-bar"><i style="--p:95%"></i></span><span class="sk-tags">Django · DRF · FastAPI · Flask · Odoo</span></div>
+        <div class="skill-mod"><span class="sk-name">database.engine</span><span class="sk-bar"><i style="--p:88%"></i></span><span class="sk-tags">PostgreSQL · MySQL · ORM · SQLAlchemy</span></div>
+        <div class="skill-mod"><span class="sk-name">frontend.render</span><span class="sk-bar"><i style="--p:78%"></i></span><span class="sk-tags">React.js · JavaScript · Node.js · HTML/CSS</span></div>
+        <div class="skill-mod"><span class="sk-name">ai.llm_eval</span><span class="sk-bar"><i style="--p:85%"></i></span><span class="sk-tags">Prompting · Model Eval · Rubric Datasets</span></div>
+        <div class="skill-mod"><span class="sk-name">scraping.daemon</span><span class="sk-bar"><i style="--p:92%"></i></span><span class="sk-tags">Selenium · BS4 · Proxies · CAPTCHA</span></div>
+        <div class="skill-mod"><span class="sk-name">devops.ctl</span><span class="sk-bar"><i style="--p:80%"></i></span><span class="sk-tags">Docker · Kubernetes · AWS · Git · CI/CD</span></div>
+        <div class="skill-mod"><span class="sk-name">integrations.bus</span><span class="sk-bar"><i style="--p:90%"></i></span><span class="sk-tags">Payments · KYC · WhatsApp · SMS · Push</span></div>
+        <div class="skill-mod"><span class="sk-name">data.pipeline</span><span class="sk-bar"><i style="--p:86%"></i></span><span class="sk-tags">Pandas · NumPy · Power BI · GraphQL</span></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="window" id="win-contact" style="--x:26%; --y:10%; --w:480px;">
+      <div class="win-bar">
+        <div class="win-lights"><button class="wl close" data-act="close" aria-label="close"></button><button class="wl min" data-act="min" aria-label="minimize"></button><button class="wl max" data-act="max" aria-label="maximize"></button></div>
+        <span class="win-title">Contact.app — new message</span>
+      </div>
+      <div class="win-body">
+        <p class="form-status" id="formStatus" hidden></p>
+        <form action="/contact" method="POST" class="mailform">
+          <label class="mono small">From<input type="text" name="name" placeholder="Your name" required /></label>
+          <label class="mono small">Reply-to<input type="email" name="email" placeholder="you@example.com" required /></label>
+          <label class="mono small">Body<textarea name="message" rows="5" placeholder="Tell me about your project or role…" required></textarea></label>
+          <button type="submit" class="send-btn mono">▸ send</button>
+        </form>
+        <div class="contact-alt mono small">
+          <a href="mailto:anamzahid126@gmail.com">✉ anamzahid126@gmail.com</a>
+          <a href="tel:+918433236275">✆ +91 84332 36275</a>
+          <a href="https://github.com/AnamZ78" target="_blank" rel="noopener">⌥ github/AnamZ78</a>
+          <a href="https://www.linkedin.com/in/anamzahid126/" target="_blank" rel="noopener">in/anamzahid126</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- dock -->
+    <nav class="dock" id="dock">
+      <button class="dock-item" data-open="terminal" title="Terminal"><span>▸_</span></button>
+      <button class="dock-item" data-open="about" title="About"><span>👤</span></button>
+      <button class="dock-item" data-open="experience" title="Experience"><span>🗂️</span></button>
+      <button class="dock-item" data-open="projects" title="Projects"><span>📁</span></button>
+      <button class="dock-item" data-open="skills" title="Skills"><span>⚙️</span></button>
+      <button class="dock-item" data-open="contact" title="Contact"><span>✉️</span></button>
+      <span class="dock-sep"></span>
+      <a class="dock-item" href="/static/assets/Anam_Zahid_Resume.pdf" target="_blank" rel="noopener" title="Resume"><span>📄</span></a>
+    </nav>
+  </div>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

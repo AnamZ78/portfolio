@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Messages — Admin</title>
+  <meta name="robots" content="noindex" />
+  <style>
+    body { background:#0a0f14; color:#dbe4ec; font-family:-apple-system, 'Segoe UI', sans-serif; padding:2rem; }
+    h1 { color:#f1f6fa; font-size:1.4rem; margin-bottom:1.2rem; }
+    table { width:100%; border-collapse:collapse; font-size:0.9rem; }
+    th, td { text-align:left; padding:0.7rem 0.9rem; border-bottom:1px solid #1c2933; vertical-align:top; }
+    th { color:#14b8a6; font-weight:600; }
+    td.msg { max-width:480px; white-space:pre-wrap; }
+    .dim { color:#8a9aa8; white-space:nowrap; }
+  </style>
+</head>
+<body>
+  <h1>Contact messages ({{ rows|length }})</h1>
+  <table>
+    <tr><th>When (UTC)</th><th>Name</th><th>Email</th><th>Message</th></tr>
+    {% for r in rows %}
+    <tr>
+      <td class="dim">{{ r.created_at.strftime('%Y-%m-%d %H:%M') if r.created_at else '—' }}</td>
+      <td>{{ r.name }}</td>
+      <td><a href="mailto:{{ r.email }}" style="color:#14b8a6">{{ r.email }}</a></td>
+      <td class="msg">{{ r.message }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
