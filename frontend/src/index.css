@@ -618,6 +618,9 @@ a:hover .roll-b span, button:hover .roll-b span, .roll-parent:hover .roll-b span
 .bento-stack .card-label { color: var(--blush); }
 .bento-bio p { margin-bottom: 0.95rem; }
 .bento-bio p:last-child { margin-bottom: 0; }
+.bento-bio .bento-card { display: flex; flex-direction: column; }
+.bio-open { margin-top: auto; padding-top: 1.1rem; }
+.bio-open .card-label { margin-bottom: 0.5rem; }
 .bio-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.3rem; }
 .bio-head h3 { margin-bottom: 0.1rem; font-family: var(--serif); font-size: 1.25rem; }
 .avatar {

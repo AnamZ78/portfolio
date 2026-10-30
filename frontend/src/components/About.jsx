@@ -44,15 +44,33 @@ export default function About() {
             </div>
           </div>
           <p>
-            I'm a <b>Python Full-Stack Developer</b> who has spent the last 3+ years shipping
-            production systems across four very different domains — web scraping at scale,
-            fintech/NBFC lending, HRMS &amp; payroll, and now <b>AI agent &amp; model evaluation</b>.
+            I'm a <b>Python Full-Stack Developer</b> with 3+ years of experience building backend
+            systems, REST APIs and web applications with Python, Django, DRF, Flask and FastAPI.
           </p>
           <p>
-            I like owning features end-to-end: modelling the data, building the APIs, wiring
-            the integrations (payments, KYC, WhatsApp, SMS, push) and getting it deployed on
-            AWS with Docker &amp; Kubernetes.
+            My work spans <b>AI/LLM evaluation</b>, FinTech, Payroll, HRMS, ATS and web scraping.
+            At Quess Corp (Client: Ethara AI) I evaluate AI agents and foundation models — prompt
+            engineering, SFT dataset preparation, rubric-based evaluation and ARC-AGI-3 training
+            environments — alongside backend work in Python, Odoo and REST APIs.
           </p>
+          <p>
+            Before that I built end-to-end payroll and HRMS workflows, ATS modules, multi-tenant
+            applications and FinTech/NBFC backends covering loan management, KYC, authentication
+            and third-party integrations (payments, WhatsApp, SMS, push), deployed on AWS with
+            Docker &amp; Kubernetes.
+          </p>
+          <p>
+            I enjoy hard engineering problems, scalable backend design, performance tuning and
+            practical applications of AI.
+          </p>
+          <div className="bio-open">
+            <span className="card-label">— open to</span>
+            <div className="chip-row">
+              {["Python Backend Engineering", "AI / LLM Engineering", "Python + GenAI"].map((c) => (
+                <span className="chip" key={c}>{c}</span>
+              ))}
+            </div>
+          </div>
         </BentoCard>
 
         <BentoCard i={1} className="bento-now">
