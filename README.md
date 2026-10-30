@@ -7,7 +7,7 @@ Live FastAPI app deployed on Render. The contact form stores messages in a datab
 ## Stack
 
 - **Backend:** FastAPI + SQLAlchemy (SQLite locally, `DATABASE_URL` Postgres in production)
-- **Frontend:** Jinja2 template + vanilla CSS/JS — dark teal developer theme, typing effect, scroll-reveal animations, fully responsive
+- **Frontend:** React + Vite + framer-motion (`frontend/`), built to `frontend/dist` and served by FastAPI at `/`. The old Jinja2 template in `templates/` is only a fallback when no build exists.
 - **Server:** uvicorn
 
 ## Routes
@@ -49,5 +49,6 @@ it picks up `render.yaml` automatically.
 ## Updating content
 
 - **Resume:** replace `static/assets/Anam_Zahid_Resume.pdf`
-- **Experience / projects / skills:** edit the matching section in `templates/index.html`
+- **Experience / projects / skills:** edit `frontend/src/data.js` (bio text lives in `frontend/src/components/About.jsx`)
+- **Rebuild after content changes:** `cd frontend && npm install && npm run build`, then commit `frontend/dist`
 - **Accent color:** change `--accent` in `static/css/style.css`

@@ -53,7 +53,7 @@ export default function Hero({ loaded }) {
 
         <motion.p className="hero-role" {...fade(0.8)}>
           Python Full-Stack Developer — <em>3+ years</em> building{" "}
-          <em>fintech, HRMS, AI-evaluation</em> and <em>data platforms</em> with Django,
+          <em>fintech, HRMS, AI agent evaluation</em> and <em>data platforms</em> with Django,
           FastAPI, React &amp; AWS.
         </motion.p>
 

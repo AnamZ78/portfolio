@@ -1,5 +1,6 @@
 // ============================================================
 // All portfolio content in one place — edit here, not in components
+// Source of truth: Anam_Resume.pdf (updated Oct 2026)
 // ============================================================
 
 export const LINKS = {
@@ -21,7 +22,7 @@ export const STATS = [
 
 export const MARQUEE_SKILLS = [
   "Python", "Django", "FastAPI", "React", "PostgreSQL", "AWS",
-  "Docker", "LLM Evaluation", "Fintech", "HRMS", "Web Scraping",
+  "Docker", "AI Agent Evaluation", "LLM Testing", "Fintech", "HRMS", "Web Scraping",
 ];
 
 export const MARQUEE_CTA = [
@@ -36,10 +37,11 @@ export const EXPERIENCE = [
     note: "Client: Ethara AI",
     date: "Feb 2026 → now · Gurugram",
     points: [
-      "AI & LLM model evaluation — personas, prompts, rubric-based datasets, output quality checks.",
-      "Contributed training games, trajectories and an evaluation harness to the ARC-AGI-3 benchmark.",
-      "Custom Odoo addons exposing REST APIs — KPI dashboards, budget tracking, role-scoped task views.",
-      "Lifecycle notifications with priority escalation; Docker & Kubernetes workflows.",
+      "Evaluate AI agents and foundation models for accuracy, latency, cost and reliability using internal benchmarks and pass@k testing.",
+      "Prepare SFT datasets — cleaning, de-duplication, format standardisation and quality checks for supervised fine-tuning.",
+      "Test models on reasoning, information-extraction and summarisation tasks with Python & pytest; sandboxed agent runs via OpenHands SDK, LiteLLM, Docker and nftables.",
+      "Built training games, trajectories and evaluation harnesses for ARC-AGI-3, with quality checks on prompts, datasets and outputs.",
+      "Custom Odoo addons & REST APIs for KPI dashboards, analytics, budget tracking and task management (ORM + caching); automated notifications and a centralised log feed.",
     ],
   },
   {
@@ -48,21 +50,21 @@ export const EXPERIENCE = [
     note: "BharatPayroll HRMS",
     date: "Aug 2025 → Feb 2026 · Remote",
     points: [
-      "End-to-end payroll: salary computation, referral bonuses, statutory forms (Form 16, 3A, 15G).",
-      "Designed the full offboarding module — approvals, NOC, exit interviews, Email + WhatsApp alerts.",
-      "Built a complete ATS: resume/JD parsing, assessments, referral flows, pipeline tracking, HRMS sync.",
-      "Scalable multi-tenant architecture with tenant-level configuration and reporting.",
+      "End-to-end payroll: overdays & salary-credit computation, referral-bonus automation, statutory forms (Form 16, 3A, 15G).",
+      "Designed the full offboarding module solo — resignation, HR/manager approvals, NOC clearance, exit interviews, Email + WhatsApp alerts.",
+      "Built a complete ATS: resume/JD parsing, job orders, online assessments, referral flows, stage timelines, pipeline tracking and HRMS sync for onboarding.",
+      "Employee referral system with automated incentives; scalable multi-tenant architecture with tenant-level config, leave/attendance rules and audit reports.",
     ],
   },
   {
     role: "Python/Django Developer",
     company: "Jewar International Technologies",
-    note: "",
+    note: "Mobile app: Anekk Fintech",
     date: "Feb 2025 → Aug 2025 · Noida",
     points: [
-      "Complete fintech/NBFC backend — KYC (Aadhaar, PAN, selfie, video), OTP/MPIN auth, multi-role dashboards.",
-      "Full loan lifecycle: NumPy/Pandas calculations, sanctioning, repayments, analytics; deployed on AWS.",
-      "Integrated video KYC, MSG91 SMS, WhatsApp, email, push; generated legal PDFs.",
+      "Complete fintech/NBFC backend — KYC (Aadhaar, PAN, selfie, video), OTP/MPIN auth, multi-role dashboards, multilingual support.",
+      "Full loan lifecycle: NumPy/Pandas calculations, sanctioning, disbursement, repayments, analytics; deployed on AWS.",
+      "Optimised DRF APIs with ORM + raw SQL; integrated video KYC, MSG91 SMS, WhatsApp, email, push; generated KFS, agreement and sanction-letter PDFs.",
       "🏆 Best Performer & Rising Star awards.",
     ],
   },
@@ -74,7 +76,8 @@ export const EXPERIENCE = [
     points: [
       "Large-scale scraping systems for Walmart, Home Depot, Wayfair, Amazon, Lumens, Target.",
       "Proxy rotation, CAPTCHA handling, dynamic waits, anti-bot bypass — reliable extraction at scale.",
-      "High-volume dataset processing with Pandas & SQL for analytics pipelines.",
+      "Automated recurring scraping workflows with fault tolerance; high-volume dataset processing with Pandas & SQL.",
+      "Documented scraping architectures, workflows and monitoring for maintainability.",
     ],
   },
 ];
@@ -83,23 +86,23 @@ export const PROJECTS = [
   {
     icon: "🗃️",
     name: "hrms-lite",
-    desc: "Full-stack HRMS — employees, attendance with status types & date filters, real-time analytics dashboard.",
+    desc: "Production-ready full-stack HRMS — employee management, attendance (Present/Absent/Late/Half Day) with date filters & per-employee summaries, live dashboard analytics. FastAPI + SQLAlchemy + Pydantic.",
     chips: ["React", "TypeScript", "FastAPI", "PostgreSQL"],
     href: "https://github.com/AnamZ78/hrms-lite",
     featured: true,
   },
   {
     icon: "🏦",
-    name: "nbfc-lending-backend",
-    desc: "Lending platform backend — full KYC, loan lifecycle to disbursement, e-sign, PDFs, multilingual, SMS/WhatsApp/push.",
+    name: "anekk-nbfc-backend",
+    desc: "NBFC mobile-app backend — full KYC (Aadhaar, PAN, video, selfie), loan application to disbursement, e-sign, PDFs, multilingual, SMS/WhatsApp/email/push.",
     chips: ["Django", "DRF", "PostgreSQL", "AWS"],
     private: true,
   },
   {
     icon: "🕷️",
     name: "scraper-fleet",
-    desc: "Distributed e-commerce scrapers — proxy rotation, CAPTCHA bypass, fault-tolerant scheduling, clean data out.",
-    chips: ["Selenium", "BeautifulSoup", "Pandas"],
+    desc: "Automated e-commerce scrapers — proxy rotation, CAPTCHA bypass, dynamic waits, fault-tolerant scheduling, structured storage for analytics.",
+    chips: ["Selenium", "BeautifulSoup", "Pandas", "MySQL"],
     private: true,
   },
   {
@@ -126,12 +129,13 @@ export const PROJECTS = [
 ];
 
 export const SKILLS = [
-  { title: "Backend", chips: ["Python", "Django", "DRF", "FastAPI", "Flask", "Odoo"] },
-  { title: "Databases", chips: ["PostgreSQL", "MySQL", "SQLAlchemy", "ORM"] },
+  { title: "Backend", chips: ["Python", "Django", "DRF", "Django Channels", "FastAPI", "Flask", "Odoo"] },
+  { title: "Databases", chips: ["PostgreSQL", "MySQL", "SQLite", "SQLAlchemy", "Django ORM"] },
   { title: "Frontend", chips: ["React.js", "JavaScript", "Node.js", "HTML/CSS"] },
-  { title: "AI / LLM", chips: ["Prompting", "Model Evaluation", "Rubric Datasets", "ARC-AGI-3"] },
-  { title: "Web Scraping", chips: ["Selenium", "BeautifulSoup", "Proxies", "CAPTCHA handling"] },
-  { title: "DevOps & Cloud", chips: ["Docker", "Kubernetes", "AWS", "Git", "CI/CD"] },
-  { title: "Integrations", chips: ["Payments", "KYC", "WhatsApp", "SMS", "Push"] },
-  { title: "Data", chips: ["Pandas", "NumPy", "Power BI", "GraphQL"] },
+  { title: "AI / LLM", chips: ["Agent Evaluation", "Prompt Engineering", "SFT", "Rubric-Based Eval", "pass@k", "Model Testing"] },
+  { title: "AI Tools", chips: ["OpenHands SDK", "LiteLLM", "pytest", "Frontier-Model APIs", "nftables"] },
+  { title: "Web Scraping", chips: ["Selenium", "BeautifulSoup", "Requests", "XPath", "Proxy Rotation", "CAPTCHA handling"] },
+  { title: "DevOps & Cloud", chips: ["Docker", "Kubernetes", "AWS (EC2, S3)", "Git", "GitHub"] },
+  { title: "Integrations", chips: ["Payments", "KYC", "WhatsApp", "MSG91 SMS", "Email", "Push"] },
+  { title: "Data & APIs", chips: ["Pandas", "NumPy", "Data Cleaning", "RESTful", "GraphQL", "Power BI"] },
 ];

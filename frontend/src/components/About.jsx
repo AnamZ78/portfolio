@@ -46,7 +46,7 @@ export default function About() {
           <p>
             I'm a <b>Python Full-Stack Developer</b> who has spent the last 3+ years shipping
             production systems across four very different domains — web scraping at scale,
-            fintech/NBFC lending, HRMS &amp; payroll, and now <b>AI / LLM evaluation</b>.
+            fintech/NBFC lending, HRMS &amp; payroll, and now <b>AI agent &amp; model evaluation</b>.
           </p>
           <p>
             I like owning features end-to-end: modelling the data, building the APIs, wiring
@@ -57,9 +57,10 @@ export default function About() {
 
         <BentoCard i={1} className="bento-now">
           <p className="card-label">— currently</p>
-          <h3>AI &amp; LLM Evaluation @ Ethara AI</h3>
+          <h3>AI Agent &amp; Model Evaluation @ Ethara AI</h3>
           <p className="mini">
-            Personas, rubric datasets, output quality checks — plus contributions to the{" "}
+            Benchmarks, pass@k testing, SFT dataset prep and sandboxed agent runs
+            (OpenHands SDK, LiteLLM, Docker) — plus training games and eval harnesses for the{" "}
             <b>ARC-AGI-3 benchmark</b>.
           </p>
         </BentoCard>
@@ -93,6 +94,7 @@ export default function About() {
           <h3>🏆 Best Performer &amp; Rising Star</h3>
           <p className="mini">
             Awarded at Jewar International for delivering the NBFC lending platform end-to-end.
+            Also: Best Photography/Drawing award at MMMUT (Azadi Ka Amrit Mahotsav).
           </p>
         </BentoCard>
       </div>
